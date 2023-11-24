@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Negrea_Laura_Florina_Lab7.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="books.jpg"
+                SemanticProperties.Description="An image of a book"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Florina's Page"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to my page!"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to my page"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Passionate about the world of literature, I find joy and adventure in the pages of books.Each story I delve into offers me a new perspective, enriching my imagination and knowledge."
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="A little bit about me"
+                FontSize="17"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
