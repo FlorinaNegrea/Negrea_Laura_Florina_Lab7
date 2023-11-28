@@ -8,12 +8,15 @@
 
     <TabBar>
         <ShellContent
-        Title="My Page"
+        Title="Welcome"
         ContentTemplate="{DataTemplate local:MainPage}"
         />
         <ShellContent
         Title="About"
         ContentTemplate="{DataTemplate local:AboutPage}"
         />
+        <ShellContent
+            Title="My Shopping Lists"
+            ContentTemplate="{DataTemplate local:ListEntryPage}"/>
     </TabBar>
 </Shell>
