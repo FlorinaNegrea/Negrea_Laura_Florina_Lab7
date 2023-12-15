@@ -14,6 +14,7 @@ namespace Negrea_Laura_Florina_Lab7.Data
         public ShoppingListDatabase(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
+            _database.CreateTableAsync<Shop>().Wait();
             _database.CreateTableAsync<ShopList>().Wait();
             _database.CreateTableAsync<Product>().Wait();
             _database.CreateTableAsync<ListProduct>().Wait();
@@ -90,5 +91,26 @@ namespace Negrea_Laura_Florina_Lab7.Data
                 .Where(lp => lp.ProductID == productId && lp.ShopListID == shopListId)
                 .DeleteAsync();
         }
+        public Task<List<Shop>> GetShopsAsync()
+        {
+            return _database.Table<Shop>().ToListAsync();
+        }
+
+        public Task<int> SaveShopAsync(Shop shop)
+        {
+            if (shop.ID != 0)
+            {
+                return _database.UpdateAsync(shop);
+            }
+            else
+            {
+                return _database.InsertAsync(shop);
+            }
+        }
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
+        }
+
     }
 }
